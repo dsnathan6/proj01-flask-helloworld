@@ -6,7 +6,9 @@ from flask_swagger_ui import get_swaggerui_blueprint
 app = Flask(__name__)
 api = Api(app)
 
-
+# ###
+# This is student file created for the building projects
+###
 class ClsStudents( Resource):
     def get(self, name):
         return {'GET students name': name}
