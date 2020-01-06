@@ -1,0 +1,25 @@
+from flask import Flask
+from flask_restful import Resource, Api
+from flask_swagger_ui import get_swaggerui_blueprint
+
+
+app = Flask(__name__)
+api = Api(app)
+
+
+class ClsStudents( Resource):
+    def get(self, name):
+        return {'GET students name': name}
+
+    def put(self, name):
+        return {'PUT students name is set to ': name}
+
+    def post(self, name):
+        return {'POST students name is set to ': name}
+
+    def delete(self, name):
+        return {'DELETE students name is set to ': name}
+
+
+api.add_resource(ClsStudents, '/student/<string:name>')
+app.run(port=5001)
