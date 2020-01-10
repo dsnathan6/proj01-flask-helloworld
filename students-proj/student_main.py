@@ -26,5 +26,11 @@ class ClsStudents( Resource):
         return {'DELETE students name is set to ': name}
 
 
+class ClsTeachers(Resource):
+    def get(self, name):
+        return  { 'Name of the Teatcher': name}
+
+
 api.add_resource(ClsStudents, '/student/<string:name>')
+api.add_resource(ClsTeachers, '/teacher/<string:name>')
 app.run(port=5001)
